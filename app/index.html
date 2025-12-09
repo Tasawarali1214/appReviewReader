@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Store Review Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Play Store Review Analyzer</h1>
+            <p>Analyze Google Play Store reviews with sentiment analysis</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="appId">App Package Name or URL:</label>
+                        <input 
+                            type="text" 
+                            id="appId" 
+                            name="appId" 
+                            placeholder="e.g., com.whatsapp or https://play.google.com/store/apps/details?id=com.whatsapp"
+                            required
+                        >
+                        <small class="help-text">Enter the app's package name or Play Store URL</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewCount">Number of Reviews:</label>
+                        <input 
+                            type="number" 
+                            id="reviewCount" 
+                            name="reviewCount" 
+                            min="10" 
+                            max="500" 
+                            value="50"
+                            required
+                        >
+                        <small class="help-text">Select how many reviews to analyze (10-500)</small>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary">
+                        <span id="btnText">Analyze Reviews</span>
+                        <span id="btnLoader" class="loader" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Play Store Review Analyzer</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
