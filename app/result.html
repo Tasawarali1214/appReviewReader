@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Analysis Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Review Analysis Results</h1>
+            <a href="index.html" class="btn-back">← Back to Home</a>
+        </header>
+
+        <main>
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing reviews...</p>
+            </div>
+
+            <div id="results" style="display: none;">
+                <!-- App Info Section -->
+                <section class="app-info">
+                    <h2 id="appName"></h2>
+                    <p id="appDeveloper"></p>
+                    <div class="app-rating">
+                        <span class="rating-value" id="appRating"></span>
+                        <span class="rating-count" id="ratingCount"></span>
+                    </div>
+                </section>
+
+                <!-- Sentiment Summary -->
+                <section class="sentiment-summary">
+                    <h2>Sentiment Analysis Summary</h2>
+                    <div class="sentiment-cards">
+                        <div class="sentiment-card positive">
+                            <div class="sentiment-icon">😊</div>
+                            <div class="sentiment-value" id="positivePercent">0%</div>
+                            <div class="sentiment-label">Positive</div>
+                            <div class="sentiment-count" id="positiveCount">0 reviews</div>
+                        </div>
+                        <div class="sentiment-card neutral">
+                            <div class="sentiment-icon">😐</div>
+                            <div class="sentiment-value" id="neutralPercent">0%</div>
+                            <div class="sentiment-label">Neutral</div>
+                            <div class="sentiment-count" id="neutralCount">0 reviews</div>
+                        </div>
+                        <div class="sentiment-card negative">
+                            <div class="sentiment-icon">😞</div>
+                            <div class="sentiment-value" id="negativePercent">0%</div>
+                            <div class="sentiment-label">Negative</div>
+                            <div class="sentiment-count" id="negativeCount">0 reviews</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reviews List -->
+                <section class="reviews-section">
+                    <h2>Analyzed Reviews</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="positive">Positive</button>
+                        <button class="filter-btn" data-filter="neutral">Neutral</button>
+                        <button class="filter-btn" data-filter="negative">Negative</button>
+                    </div>
+                    <div id="reviewsList" class="reviews-list"></div>
+                </section>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Play Store Review Analyzer</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
