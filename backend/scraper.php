@@ -194,6 +194,8 @@ class PlayStoreScraper {
                 }
             }
         }
+
+        
         
         // Fallback: Simple text extraction
         if (empty($reviews)) {
@@ -225,6 +227,7 @@ class PlayStoreScraper {
             'rating' => 5,
             'date' => date('Y-m-d')
         ];
+        //extract author name is
         
         // Extract author name
         if (preg_match('/<span[^>]class="[^"]*X43Kjb[^"]"[^>]*>([^<]+)<\/span>/', $blockHtml, $matches)) {
@@ -259,6 +262,7 @@ class PlayStoreScraper {
         
         return null;
     }
+
     
     /**
      * Convert month name to number
