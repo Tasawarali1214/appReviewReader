@@ -1,0 +1,22 @@
+# Play Store Review Analyzer - Root Configuration
+
+# Enable directory browsing (optional, for debugging)
+Options -Indexes
+
+# Set default index files
+DirectoryIndex index.php index.html
+
+# Enable PHP error reporting (for development)
+<IfModule mod_php.c>
+    php_flag display_errors On
+    php_value error_reporting E_ALL
+</IfModule>
+
+# Enable rewrite engine (if needed for future routing)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /PlayStoreReview/
+    
+    # Redirect root to app
+    RewriteRule ^$ app/index.html [L,R=301]
+</IfModule>
